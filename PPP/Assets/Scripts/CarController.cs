@@ -10,6 +10,10 @@ public class CarController : MonoBehaviour
     [SerializeField] private WheelCollider BackLWheel;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float maxSteeringAngle;
+    [SerializeField] private Transform FrontRWheelT;
+    [SerializeField] private Transform BackRWheelT;
+    [SerializeField] private Transform FrontLWheelT;
+    [SerializeField] private Transform BackLWheelT;
     private float speed;
     private bool isBreaking;
     private float currentBreakStrength;
@@ -22,7 +26,7 @@ public class CarController : MonoBehaviour
         speed = maxSpeed * Input.GetAxis("Vertical");
         steeringAngle = maxSteeringAngle * Input.GetAxis("Horizontal");
         Debug.Log(speed);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             currentBreakStrength = breakStrength;
         }
@@ -32,6 +36,12 @@ public class CarController : MonoBehaviour
 
         FrontLWheel.motorTorque = speed;
         FrontRWheel.motorTorque = speed;
+
+        if (FrontLWheel.rpm > 500)
+            FrontLWheel.motorTorque = 0;
+
+        if (FrontRWheel.rpm > 500)
+            FrontRWheel.motorTorque = 0;
 
         FrontLWheel.brakeTorque = currentBreakStrength;
         FrontRWheel.brakeTorque = currentBreakStrength;
@@ -43,8 +53,20 @@ public class CarController : MonoBehaviour
 
 
 
+        UpdateSteeringWheel(FrontLWheel, FrontLWheelT);
+        UpdateSteeringWheel(FrontRWheel, FrontRWheelT);
+        UpdateSteeringWheel(BackLWheel, BackLWheelT);
+        UpdateSteeringWheel(BackRWheel, BackRWheelT);
 
+    }
 
+    public void UpdateSteeringWheel(WheelCollider wheelCollider, Transform transform)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        wheelCollider.GetWorldPose(out pos, out rot);
+        transform.position = pos;
+        transform.rotation = rot;
     }
 
 
