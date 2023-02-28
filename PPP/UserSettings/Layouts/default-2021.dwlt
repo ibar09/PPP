@@ -109,25 +109,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 6}
-<<<<<<< HEAD
-  - {fileID: 11}
-=======
   - {fileID: 12}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
     width: 1536
     height: 722.8
-  m_MinSize: {x: 300, y: 200}
-  m_MaxSize: {x: 24288, y: 16192}
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 21
-=======
   controlID: 22986
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,21 +134,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 7}
-  - {fileID: 10}
+  - {fileID: 11}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1038.4
     height: 722.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 16192, y: 16192}
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 53
-=======
   controlID: 22987
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,25 +160,17 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8}
   - {fileID: 9}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1095.2
-    height: 490.4
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 99
-=======
     width: 1038.4
     height: 489.6
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
   controlID: 22988
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,15 +192,9 @@ MonoBehaviour:
     height: 489.6
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-<<<<<<< HEAD
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
-=======
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -240,10 +214,6 @@ MonoBehaviour:
     serializedVersion: 2
     x: 256.8
     y: 0
-<<<<<<< HEAD
-    width: 826.39996
-    height: 490.4
-=======
     width: 248.80002
     height: 489.6
   m_MinSize: {x: 202, y: 221}
@@ -273,24 +243,14 @@ MonoBehaviour:
     y: 0
     width: 532.80005
     height: 489.6
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
-<<<<<<< HEAD
-  - {fileID: 14}
-  - {fileID: 15}
-  - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 2
---- !u!114 &10
-=======
   - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &11
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,26 +260,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 490.4
-    width: 1095.2
-    height: 232.4
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 16}
-  m_Panes:
-  - {fileID: 16}
-  - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &11
-=======
     y: 489.6
     width: 1038.4
     height: 233.19998
@@ -332,7 +278,6 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &12
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -351,16 +296,6 @@ MonoBehaviour:
     y: 0
     width: 497.59998
     height: 722.8
-<<<<<<< HEAD
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &12
-=======
   m_MinSize: {x: 311, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
@@ -370,7 +305,6 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &13
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,17 +325,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 268.80002
-    y: 73.6
-    width: 824.39996
-    height: 469.4
-=======
     x: 505.6
     y: 73.6
     width: 530.80005
     height: 468.6
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -412,15 +339,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
-  m_TargetSize: {x: 1030.5, y: 560.5}
-=======
   m_TargetSize: {x: 663.50006, y: 559.5}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 0
+  m_EnterPlayModeBehavior: 1
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -431,17 +354,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-<<<<<<< HEAD
-    m_HBaseRangeMin: -412.2
-    m_HBaseRangeMax: 412.2
-    m_VBaseRangeMin: -224.2
-    m_VBaseRangeMax: 224.2
-=======
     m_HBaseRangeMin: -265.40002
     m_HBaseRangeMax: 265.40002
     m_VBaseRangeMin: -223.8
     m_VBaseRangeMax: 223.8
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -450,7 +366,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -459,32 +375,16 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-      width: 824.39996
-      height: 448.4
-    m_Scale: {x: 0.99999994, y: 0.99999994}
-    m_Translation: {x: 412.19998, y: 224.2}
-=======
       width: 530.80005
       height: 447.6
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 265.40002, y: 223.8}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-      x: -412.2
-      y: -224.20001
-      width: 824.4
-      height: 448.40002
-    m_MinimalGUI: 1
-  m_defaultScale: 0.99999994
-  m_LastWindowPixelSize: {x: 1030.5, y: 586.75}
-=======
       x: -265.40002
       y: -223.8
       width: 530.80005
@@ -492,17 +392,12 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 663.50006, y: 585.75}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
-<<<<<<< HEAD
---- !u!114 &13
-=======
 --- !u!114 &14
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -534,15 +429,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-      m_SelectedIDs: f6790000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffff
-=======
       m_SelectedIDs: 7a21ffff
       m_LastClickedID: -56966
       m_ExpandedIDs: c49bfbff7a21fffff858ffff6ebcffff
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -566,38 +455,6 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 695cec5fdb0976948bf6db3cb1f019eb
-<<<<<<< HEAD
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 2048, y: 2048}
-  m_TitleContent:
-    m_Text: Asset Store
-    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 468
-    y: 181
-    width: 973
-    height: 501
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-=======
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -621,13 +478,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 256.80002
     y: 73.6
-<<<<<<< HEAD
-    width: 824.39996
-    height: 469.4
-=======
     width: 246.80002
     height: 468.6
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -637,8 +489,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -100, y: -25.600006}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: -100, y: -25.600006}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -659,7 +511,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -681,7 +533,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -862,15 +714,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: 13.62831, y: 0.88508964, z: -259.82092}
-    speed: 2
-    m_Value: {x: 13.62831, y: 0.88508964, z: -259.82092}
-=======
     m_Target: {x: 16.692205, y: 0.81224316, z: 20.224054}
     speed: 2
     m_Value: {x: 16.692205, y: 0.81224316, z: 20.224054}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -917,15 +763,6 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-    speed: 2
-    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_Size:
-    m_Target: 35.139175
-    speed: 2
-    m_Value: 35.139175
-=======
     m_Target: {x: 0.39958125, y: 0.25073332, z: -0.11459934, w: 0.87426496}
     speed: 2
     m_Value: {x: -0.39958122, y: -0.2507333, z: 0.11459933, w: -0.8742649}
@@ -933,7 +770,6 @@ MonoBehaviour:
     m_Target: 3.9694238
     speed: 2
     m_Value: 3.9694238
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -959,8 +795,6 @@ MonoBehaviour:
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
 --- !u!114 &16
-<<<<<<< HEAD
-=======
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -990,7 +824,6 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
 --- !u!114 &17
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1012,15 +845,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 564
-    width: 1094.2
-    height: 211.4
-=======
     y: 563.2
     width: 1037.4
     height: 212.19998
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1038,37 +865,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-<<<<<<< HEAD
-    - Assets
-=======
     - Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/URP
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-<<<<<<< HEAD
-  - Assets
-=======
   - Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials/Materials/URP
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity games\PPP\PPP
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 12770000
-    m_LastClickedID: 30482
-    m_ExpandedIDs: 00000000127700001477000016770000187700001a7700001c7700001e77000000ca9a3bffffff7f
-=======
     scrollPos: {x: 0, y: 143.80002}
     m_SelectedIDs: e2d40000
     m_LastClickedID: 54498
     m_ExpandedIDs: 0000000078b7000000ca9a3bffffff7f
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1084,7 +896,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1096,11 +908,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000127700001477000016770000187700001a7700001c7700001e770000
-=======
     m_ExpandedIDs: 0000000078b7000000ca9a3bffffff7f
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1125,17 +933,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300001e6c0000
-=======
     m_SelectedInstanceIDs: 7a21ffff
     m_LastClickedInstanceID: -56966
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,11 +952,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-<<<<<<< HEAD
-      m_ClientGUIView: {fileID: 10}
-=======
       m_ClientGUIView: {fileID: 11}
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1163,15 +960,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 42.600006}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
-<<<<<<< HEAD
---- !u!114 &17
-=======
 --- !u!114 &18
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1200,11 +993,7 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-<<<<<<< HEAD
---- !u!114 &18
-=======
 --- !u!114 &19
->>>>>>> parent of 39f7bbf (further improvement of the car controls and added road)
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
