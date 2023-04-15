@@ -8,46 +8,70 @@ public class CarController : MonoBehaviour
     [SerializeField] private WheelCollider BackRWheel;
     [SerializeField] private WheelCollider FrontLWheel;
     [SerializeField] private WheelCollider BackLWheel;
-    [SerializeField] private float maxSpeed;
+    [SerializeField] private float maxMotorTorque;
     [SerializeField] private float maxSteeringAngle;
     [SerializeField] private Transform FrontRWheelT;
     [SerializeField] private Transform BackRWheelT;
     [SerializeField] private Transform FrontLWheelT;
     [SerializeField] private Transform BackLWheelT;
+    [SerializeField] private Transform gravityCenter;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float maxSpeed;
+    private float motorTorque;
     private float speed;
-    private bool isBreaking;
+    public float brakeInput;
+
     private float currentBreakStrength;
     [SerializeField] private float breakStrength;
     private float steeringAngle;
+    public AnimationCurve steeringCurve;
+    public AnimationCurve accelerationCurve;
 
-
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = gravityCenter.localPosition;
+    }
     private void FixedUpdate()
     {
-        speed = maxSpeed * Input.GetAxis("Vertical");
-        steeringAngle = maxSteeringAngle * Input.GetAxis("Horizontal");
-        Debug.Log(speed);
-        if (Input.GetKey(KeyCode.Space))
+        speed = rb.velocity.magnitude;
+        float gasInput = Input.GetAxis("Vertical");
+        float steerInput = Input.GetAxis("Horizontal");
+        float slipAngle = Vector3.Angle(transform.forward, rb.velocity - transform.forward);
+        float movingDirection = Vector3.Dot(transform.forward, rb.velocity);
+        if (movingDirection < -0.5f && gasInput > 0)
         {
-            currentBreakStrength = breakStrength;
+            brakeInput = Mathf.Abs(gasInput);
+        }
+        else if (movingDirection > 0.5f && gasInput < 0)
+        {
+            brakeInput = Mathf.Abs(gasInput);
         }
         else
-            currentBreakStrength = 0f;
+        {
+            brakeInput = 0;
+        }
+        motorTorque = maxMotorTorque * gasInput;
+
+        Debug.Log(motorTorque);
 
 
-        FrontLWheel.motorTorque = speed;
-        FrontRWheel.motorTorque = speed;
 
-        if (FrontLWheel.rpm > 500)
-            FrontLWheel.motorTorque = 0;
+        BackLWheel.motorTorque = motorTorque;
+        BackRWheel.motorTorque = motorTorque;
 
-        if (FrontRWheel.rpm > 500)
-            FrontRWheel.motorTorque = 0;
+        if (speed >= maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
 
-        FrontLWheel.brakeTorque = currentBreakStrength;
-        FrontRWheel.brakeTorque = currentBreakStrength;
-        BackLWheel.brakeTorque = currentBreakStrength;
-        BackRWheel.brakeTorque = currentBreakStrength;
-
+        ApplyBrake();
+        steeringAngle = steeringCurve.Evaluate(speed) * steerInput;
+        if (slipAngle < 120f)
+        {
+            steeringAngle += Vector3.SignedAngle(transform.forward, rb.velocity + transform.forward, Vector3.up);
+        }
+        steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
         FrontLWheel.steerAngle = steeringAngle;
         FrontRWheel.steerAngle = steeringAngle;
 
@@ -67,6 +91,25 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         transform.position = pos;
         transform.rotation = rot;
+    }
+    void ApplyBrake()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            FrontLWheel.brakeTorque = breakStrength * 0.7f;
+            FrontRWheel.brakeTorque = breakStrength * 0.7f;
+            BackLWheel.brakeTorque = breakStrength * 0.3f;
+            BackRWheel.brakeTorque = breakStrength * 0.3f;
+        }
+        else
+        {
+            FrontLWheel.brakeTorque = brakeInput * breakStrength * 0.7f;
+            FrontRWheel.brakeTorque = brakeInput * breakStrength * 0.7f;
+            BackLWheel.brakeTorque = brakeInput * breakStrength * 0.3f;
+            BackRWheel.brakeTorque = brakeInput * breakStrength * 0.3f;
+        }
+
+
     }
 
 
