@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CarController : MonoBehaviour
 {
@@ -19,7 +20,9 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxSpeed;
     private float motorTorque;
     private float speed;
+    private float gasInput;
     public float brakeInput;
+    public float steerInput;
     private float speedClamped;
     private float currentBreakStrength;
     [SerializeField] private float breakStrength;
@@ -28,18 +31,34 @@ public class CarController : MonoBehaviour
     public AnimationCurve accelerationCurve;
     [SerializeField] private float forceStrength;
     public int isEngineRunning;
+    [SerializeField] private PhotonView view;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = gravityCenter.localPosition;
+        view = GetComponent<PhotonView>();
     }
     private void FixedUpdate()
     {
+        if (MatchMaking.Instance.isOnlineGame)
+        {
 
+            if (view.IsMine)
+            {
+                Drive();
+            }
+        }
+        else
+        {
+            Drive();
+        }
+    }
+    private void Drive()
+    {
         speed = rb.velocity.magnitude;
-        float gasInput = Input.GetAxis("Vertical");
-        float steerInput = Input.GetAxis("Horizontal");
+        if (Input.GetAxis("Vertical") != 0)
+            SetInputs(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
         float slipAngle = Vector3.Angle(transform.forward, rb.velocity - transform.forward);
         float movingDirection = Vector3.Dot(transform.forward, rb.velocity);
         float accelerationfactor = accelerationCurve.Evaluate(speed);
@@ -91,7 +110,6 @@ public class CarController : MonoBehaviour
         UpdateSteeringWheel(FrontRWheel, FrontRWheelT);
         UpdateSteeringWheel(BackLWheel, BackLWheelT);
         UpdateSteeringWheel(BackRWheel, BackRWheelT);
-
     }
 
     public void UpdateSteeringWheel(WheelCollider wheelCollider, Transform transform)
@@ -127,6 +145,10 @@ public class CarController : MonoBehaviour
         return speedClamped * gas / maxSpeed;
     }
 
-
+    public void SetInputs(float gasInput, float steerInput)
+    {
+        this.gasInput = gasInput;
+        this.steerInput = steerInput;
+    }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private Rigidbody car;
+    [SerializeField] public Rigidbody car;
     [SerializeField] private TextMeshProUGUI speedText;
     [SerializeField] public TextMeshProUGUI counterText;
     [SerializeField] private GameObject finishWindow;

@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
 public class Player : MonoBehaviour
 {
     private Ability ability;
     public int rank = 1;
     private float currentValue = 3;
-
+    private PhotonView view;
 
     private void Start()
     {
+        view = GetComponent<PhotonView>();
         StartRace();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && ability != null)
+
+        if (Input.GetKeyDown(KeyCode.X) && ability != null && view.IsMine)
         {
             UseAbility();
         }
-        if (GetComponent<CarController>().enabled == true)
-            Debug.Log(rank);
+        /*if (GetComponent<CarController>().enabled == true)
+             Debug.Log(rank);*/
     }
 
     public float CalculateRank()
