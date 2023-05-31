@@ -18,14 +18,18 @@ public class CarController : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float maxSpeed;
     private float motorTorque;
-    private float speed;
+    public float speed;
+    public float gasInput;
     public float brakeInput;
-
+    public float steerInput;
+    private float speedClamped;
     private float currentBreakStrength;
     [SerializeField] private float breakStrength;
     private float steeringAngle;
     public AnimationCurve steeringCurve;
     public AnimationCurve accelerationCurve;
+    [SerializeField] private float forceStrength;
+    public int isEngineRunning;
 
     private void Start()
     {
@@ -34,11 +38,19 @@ public class CarController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
         speed = rb.velocity.magnitude;
-        float gasInput = Input.GetAxis("Vertical");
-        float steerInput = Input.GetAxis("Horizontal");
+        if (Input.GetAxis("Vertical") != 0)
+            SetInputs(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
         float slipAngle = Vector3.Angle(transform.forward, rb.velocity - transform.forward);
         float movingDirection = Vector3.Dot(transform.forward, rb.velocity);
+        float accelerationfactor = accelerationCurve.Evaluate(speed);
+        speedClamped = Mathf.Lerp(speedClamped, speed, Time.deltaTime);
+        rb.AddForce(-transform.forward * accelerationfactor * forceStrength, ForceMode.VelocityChange);
+        // if (Mathf.Abs(gasInput) > 0 && isEngineRunning == 0)
+        // {
+        //     StartCoroutine(GetComponent<EngineAudio>().StartEngine());
+        // }
         if (movingDirection < -0.5f && gasInput > 0)
         {
             brakeInput = Mathf.Abs(gasInput);
@@ -51,9 +63,9 @@ public class CarController : MonoBehaviour
         {
             brakeInput = 0;
         }
+
         motorTorque = maxMotorTorque * gasInput;
 
-        Debug.Log(motorTorque);
 
 
 
@@ -111,7 +123,16 @@ public class CarController : MonoBehaviour
 
 
     }
+    public float GetSpeedRatio()
+    {
+        var gas = Mathf.Clamp(Mathf.Abs(Input.GetAxis("Vertical")), 0.5f, 1f);
+        return speedClamped * gas / maxSpeed;
+    }
 
-
+    public void SetInputs(float gasInput, float steerInput)
+    {
+        this.gasInput = gasInput;
+        this.steerInput = steerInput;
+    }
 
 }
